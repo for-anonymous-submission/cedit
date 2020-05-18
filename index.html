@@ -1,15 +1,98 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>PF2Web2</title>
-	<base href="./">
+<!DOCTYPE html>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/x-icon" href="favicon.ico">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jointjs/2.1.0/joint.css" />
-<link rel="stylesheet" href="styles.3a0b7159a103ad195f8e.css"></head>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+
+<title>User study</title>
+<style type = "text/css">
+.pic_title{
+    margin-left: auto; 
+    margin-right:auto; 
+    text-align:center
+}
+img{
+    width:60%;
+    /* max-width: 100%;
+    max-height: 100%; */
+    margin-left: auto; 
+    margin-right:auto; 
+    display:block;
+}
+td{
+    width:50%;
+}
+</style>
+</head>
+
 <body>
-	  <app-root></app-root>	
-<script type="text/javascript" src="runtime.26209474bfa8dc87a77c.js"></script><script type="text/javascript" src="es2015-polyfills.e17997aea7f522b8d49d.js" nomodule></script><script type="text/javascript" src="polyfills.5b129ef0d87a37fdd7b4.js"></script><script type="text/javascript" src="scripts.2e09e8f96b5840647b64.js"></script><script type="text/javascript" src="main.05b0d1fdb4f2470bdbf6.js"></script></body>
+<a href="http://47.244.174.79">Demo of CC Editors</a>
+
+    <h1>User study</h1>
+<p>Although continuous consistency (CC) problem frames (PF) editors removes the need of manual edits after conflict detection, it may still increase the amount of manual edits before conflict detection. Therefore, the achievement of CC can only be measured empirically by considering the rate of convergence to fixed models, rather than by counting the number of manual edits. We designed a controlled experiment with two user groups, each of which includes 2 undergraduate students from a university. Group 1 does the collaborative editing through non-collaborative modeling tools, while Group 2 does the editing using our tool.</p>
+<p>In preparation, all users are trained to use the non-collaborative version of the PF editors to understand the grammar of Problem Frames so that the familiary to the DSL does not get in the way of evaluating the collaboration features. Aside from these features, the functions of the tools are exactly the same.</p>
+
+<p>During the experiments, both controlled Groups edit the same project from the same initial version, a simplified context diagram of Package Router from the textbook on Problem Frames. The task only considers the requirement of <i>correct routing</i>. It took longer time for Group 1 to understand and negotiate the modification of the other users because the modification of other users are not be known in real time. Group 2 uses our tools to synchronize modifications. Each user can see the modification of the other party in real time.  In addition, continuous consistency is trivial when there was no conflict. When there was a conflict, after 3-way merge, the merged version contains two modifications. There was a conflict, e.g., when User3 deleted PackageRouter, and User4 changed the name of PackageRouter to  Package. Since User4's modification is newer, the merged version contains only User4's modification. Finally, the merged versions of User3 and User4 become the same.</p>
+<h1>intial version</h1>
+<table>
+    <tr>
+    <td>
+        <img src = "0t.png" style="width:70%">        
+    </td>
+    <td>
+        <img src = "0d.png" style="width:70%">        
+    </td>
+    </tr>
+    <tr>
+        <td>
+            <div class = "pic_title">Textual representation of the initial version</div><br>
+        </td>
+        <td>
+            <div class = "pic_title">Graphical representation of the initial version</div><br>
+        </td>
+    </tr>
+</table>
+<h1>Group 1</h1>
+<p>Group 1 obtained the final version after four consultations and amendments. there was only one consistent version in the round 4. It took 137 minutes to get the consistent version. In total, there were 264 semantic modifications, including 217 non-conflicting modifications, 47 conflictmodification, and 91 location modifications, which include 23 textual layout adjustments and 68 graphic layout adjustments. </p>
+<h2>Round 1</h2>
+<p>The first round of modification took 46 minutes and there were 33 semantic modifications, of which 27 had no conflicts and 6 had conflicts. 11 non-semantic modifications, including 4 text layout adjustments and 4 graph layout adjustments. The revised version is shown below.</p>
+<img src = "11t.png">
+<div class = "pic_title">Textual representation of the  version of Group 1 Round 1</div><br>
+<img src = "11d.png">
+<div class = "pic_title">Graphical representation of the  version of Group 1 Round 1</div><br>
+
+
+<h2>Round 2</h2>
+<p>The second round of modification took 56 minutes, with 171 semantic changes, of which 141 had no conflicts and 30 had conflicts, and 57 layout adjustments, including 14 text layout adjustments and 43 graphic layout adjustments. User1 modified <i>Bin1</i> and <i>Bin2</i> to <i>Bin[i]</i> and reached agreement with User2. User1 changed <i>RS</i> to <i>Reader</i>, and User2 changed <i>Reader</i> to <i>RS</i>, which was still inconsistent. The two added connections and phenomena on this basis, and the revised version is shown below. </p>
+<img src = "12t.png">
+<div class = "pic_title">Textual representation of the  version of Group 1 Round 2</div><br>
+<img src = "12d.png">
+<div class = "pic_title">Graphical representation of the  version of Group 1 Round 2</div><br>
+
+<h2>Round 3</h2>
+<p>In the third round of modification, User1 changed <i>Sensor[i]</i> to <i>BS[i]</i> and <i>AS[i]</i>, changed <i>Reader</i> to <i>RS</i>, and modified the phenomena on <i>RC -- AS[i]</i>, <i>RC -- BS[i]</i>, <i>AS[i] -- Package</i>, <i>BS[i] -- Package</i> to be consistent with User2. User2 modifies the phenomenon on <i>RC -- RS</i> to be consistent with User1. Neither of them modified the conflict on <i>Switch -- Package</i>, <i>Package -- Bin[i]</i>  and <i>Package ~> R1</i>. The revised version is shown below.</p>
+<img src = "13t.png">
+<div class = "pic_title">Textual representation of the  version of Group 1 Round 3</div><br>
+<img src = "13d.png">
+<div class = "pic_title">Graphical representation of the  version of Group 1 Round 3</div><br>
+
+<h2>Round 4</h2>
+<p>In the fourth round of modification, User1 changed the phenomenon <i>pkgDst</i> on <i>Package ~> R1</i> to <i>share (PkgDst)</i>, which is consistent with User2. User2 modified the phenomena on <i>Switch--Package</i>, <i>Package--Bin[i]</i> and <i>Package ~> R1</i> to be consistent with User1, and changed the Switch to <i>Switch[i]</i>. After negotiation, User1 accepted the modification on switch, and the final version is shown below.</p>
+<img src = "14t.png">
+<div class = "pic_title">Textual representation of the  final version of Group 1</div><br>
+<img src = "14d.png">
+<div class = "pic_title">Graphical representation of the  final version of Group 1</div><br>
+<h1>Group 2</h1>
+<h2>Final version</h2>
+<p>Group 2 used only 47 minutes. There were 84 consistent versions and 128 semantic modifications, 112 of which have no conflicts whilst 16 have conflicts which were automatically resolved. There are only 5 text layout adjustments and 78 graphicposition changes. The final version is shown below.</p>
+
+        <img src = "2t.png">
+        <div class = "pic_title">Textual representation of the final version of Group2</div><br>
+        <img src = "2d.png">
+        <div class = "pic_title">Graphical representation of the final version of Group2</div><br>
+
+
+</body>
 </html>
